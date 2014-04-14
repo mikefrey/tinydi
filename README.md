@@ -22,4 +22,7 @@ di.reg('square', function(multiply) {
 di.run(function(square) {
   square(4)
 })
+
+// in your on DOM Ready...
+di.start()
 ```
