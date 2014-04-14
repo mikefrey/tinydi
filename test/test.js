@@ -1,3 +1,5 @@
+/*global di, jasmine, describe, beforeEach, it, expect, xit*/
+
 var noop = function(){}
 var noop2 = function(a, b){}
 
