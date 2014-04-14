@@ -20,6 +20,8 @@ Tiny Dependency Injection for the browser
 
 ## Basic Usage
 
+Register some modules with `di.reg(...)`
+
 ```javascript
 di.reg('multiply', function() {
   return function(a, b) {
@@ -32,7 +34,12 @@ di.reg('square', function(multiply) {
     return multiply(a, a)
   }
 })
+```
 
+Set one or more entry points into the application using
+`di.run(...)` and start the app with `di.start()`.
+
+```javascript
 di.run(function(square) {
   square(4)
 })
