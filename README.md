@@ -49,6 +49,18 @@ di.start()
 ```
 
 
+## Installation
+
+Download `tinydi.min.js` and add a reference to your project:
+```html
+<script src="/path/to/js/libs/tinydi.min.js"></script>
+```
+
+Or use bower:
+```
+$ bower install tinydi
+```
+
 
 ## API
 
