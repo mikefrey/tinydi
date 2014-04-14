@@ -1,7 +1,7 @@
 {
   "name": "tinydi",
   "main": "tinydi.js",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "homepage": "https://github.com/mikefrey/tinydi",
   "authors": [
     "Mike Frey <frey.mike@gmail.com>"
