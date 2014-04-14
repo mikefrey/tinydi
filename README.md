@@ -5,7 +5,7 @@ Tiny Dependency Injection for the browser
 
 ## Features
 
-* Very small. <60 SLOC
+* Very small. < 60 SLOC, < 1kb minified
 * Resolves via function arguments or dependency array
 * Resolves registered modules and variables on `window`
 * No external dependencies
