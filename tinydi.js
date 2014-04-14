@@ -5,7 +5,7 @@ var di = {
 
   reg: function(name, fn) {
     var args = di._getArgs(fn)
-    if (Array.isArray(fn)) fn = fn.shift()
+    if (Array.isArray(fn)) fn = fn.pop()
     di.registry[name] = {
       fn: fn,
       args: args,
@@ -16,7 +16,7 @@ var di = {
 
   run: function(fn) {
     var args = di._getArgs(fn)
-    if (Array.isArray(fn)) fn = fn.shift()
+    if (Array.isArray(fn)) fn = fn.pop()
     di.runners.push({ fn: fn, args: args })
     return di
   },
@@ -35,7 +35,7 @@ var di = {
   },
 
   _resolve: function(args) {
-    var deps = args.map(function(arg) {
+    return args.map(function(arg) {
       var entry = di.registry[arg]
 
       if (entry && entry.instance)
@@ -47,15 +47,15 @@ var di = {
       if (window[arg])
         return window[arg]
 
-      throw new Error('Cannot resolve dependency "' + arg '"')
+      throw new Error('Cannot resolve dependency "' + arg + '"')
     })
   },
 
   _getArgs: function(fn) {
-    if (Array.isArray(fn)) return fn.slice(0, fn.length-2)
+    if (Array.isArray(fn)) return fn.slice(0, fn.length-1)
     var args = []
     var rx = /^function[^\(]*\(([^\)]*)\)/i
-    var argStr = rx.match(fn.toString())[1]
+    var argStr = fn.toString().match(rx)[1]
 
     if (argStr && argStr.length) {
       args = argStr.replace(/\s/g, '').split(/,/)
