@@ -7,6 +7,7 @@ var di = {
     var args = di._getArgs(fn)
     if (Array.isArray(fn)) fn = fn.pop()
     di.registry[name] = {
+      name: name,
       fn: fn,
       args: args,
       instance: null
